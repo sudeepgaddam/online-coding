@@ -27,3 +27,28 @@ public:
         
     }
 };
+/*
+Constant Space Solution
+*/
+
+class Solution {
+public:
+    int climbStairs(int n) {
+     
+        if(n==1) return 1;
+        else if(n==2) return 2;
+        auto prev =1;
+        auto curr = 2;
+        int i=3;
+        int next;
+        while(i <=n){
+             next = prev+curr;
+            prev = curr;
+            curr=next;
+            i++;
+        }
+        
+        return next;
+        
+    }
+};
