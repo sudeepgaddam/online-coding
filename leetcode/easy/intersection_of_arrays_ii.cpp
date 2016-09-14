@@ -14,6 +14,9 @@ What if nums1's size is small compared to nums2's size? Which algorithm is bette
 What if elements of nums2 are stored on disk, and the memory is limited such that you cannot load all elements into the memory at once?
 
 */
+/*
+Map based solution took 16ms
+*/
 
 class Solution {
 public:
@@ -28,5 +31,34 @@ public:
             }
         }
         return new_arr;
+    }
+};
+
+/*
+Below solution which is based on sorting took only 9ms solution
+Below solution is not written by me
+*/
+class Solution {
+public:
+    vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
+        sort(nums1.begin(), nums1.end());
+        sort(nums2.begin(), nums2.end());
+        int n1 = (int)nums1.size(), n2 = (int)nums2.size();
+        int i1 = 0, i2 = 0;
+        vector<int> res;
+        while(i1 < n1 && i2 < n2){
+            if(nums1[i1] == nums2[i2]) {
+                res.push_back(nums1[i1]);
+                i1++;
+                i2++;
+            }
+            else if(nums1[i1] > nums2[i2]){
+                i2++;
+            }
+            else{
+                i1++;
+            }
+        }
+        return res;
     }
 };
