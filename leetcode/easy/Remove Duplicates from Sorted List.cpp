@@ -17,10 +17,26 @@ Given 1->1->2->3->3, return 1->2->3.
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
 class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* h) {
-        if (h && (h->next = deleteDuplicates(h->next)) && h->next->val == h->val) delete h, h = h->next; return h;
+        auto curr= h;
+        if(!h) return h;
+        while(curr && curr->next) {
+            if(curr->val == curr->next->val){
+                auto tmp = curr->next;
+                curr->next =  curr->next->next;
+                delete tmp;
+            } else curr=curr->next;
+        }
         return h;
     }
 };
