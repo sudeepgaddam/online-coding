@@ -34,3 +34,16 @@ public:
         
     }
 };
+/*
+Solution based on digital root.
+Its num%9  if result is not equal to 0
+or 1 + (num-1)%9
+*/
+class Solution {
+public:
+    int addDigits(int num) {
+        if(!num) return 0; 
+      return (num%9)?num%9:9;
+        
+    }
+};
