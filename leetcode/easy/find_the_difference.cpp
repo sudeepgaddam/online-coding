@@ -1,4 +1,4 @@
-/8
+/*
 
 Given two strings s and t which consist of only lowercase letters.
 
