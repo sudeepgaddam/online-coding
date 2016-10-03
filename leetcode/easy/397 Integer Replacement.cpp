@@ -18,6 +18,14 @@ Explanation:
 8 -> 4 -> 2 -> 1
 */
 //This solution is not by me. I did DP solution which has memory limit exceeded. I like the below solution.
+
+/*
+
+Explanation:
+Maybe we can consider this problem in another way. We consider n is a binary number.
+When n is even, we just recursively divide by 2, it's the same as you.
+When n is odd, we consider the tail number of the binary number n, for example, when the tail is 01 we should minus 1, and when the tail is 11 or 111, we should plus 1, to make it can be divided to 1 faster
+*/
 class Solution 
 {
     int res = 0;
