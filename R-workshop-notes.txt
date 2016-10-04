@@ -1,0 +1,43 @@
+https://drive.google.com/file/d/0B2Fju1a5lV0reS1VcFhrUkxJZHc/view
+
+pigeon_racing <- read.csv("C:/Users/sudeepgaddam/Downloads/pigeon_racing.csv")
+  View(pigeon_racing)
+  View(pigeon_racing)
+  str(pigeon_racing)
+  tail(pigeon_racing)
+  summary(pigeon_racing$Speed)
+  class(pigeon_racing$Breeder)
+  x <- c("ada","rtrt")
+  x
+  class(x)
+  newdata <- pigeon_racing[3,1:3]
+  newdata
+  pigeons = pigeon_racing
+  pigeons[pigeons$Pos ==3]
+  pigeons[pigeons$Pos ==3,]
+  greater150 <- pigeons[pigeons$Speed >=150,]
+  > str(greater150)
+'data.frame':	119 obs. of  9 variables:
+ $ Pos    : int  1 2 3 4 5 6 7 8 9 10 ...
+ $ Breeder: Factor w/ 90 levels "4-Birds","7-11 Syndicate",..: 83 49 47 4 40 24 40 64 9 83 ...
+ $ Pigeon : Factor w/ 400 levels "0001-AU15-RTEX",..: 272 99 101 283 381 40 383 184 191 271 ...
+ $ Color  : Factor w/ 29 levels "BB","BBPD","BBPI",..: 9 26 1 4 6 6 5 6 1 6 ...
+ $ Sex    : Factor w/ 2 levels "C","H": 2 2 2 2 2 2 1 2 2 2 ...
+ $ Ent    : int  1 1 1 1 1 1 2 1 1 2 ...
+ $ Arrival: Factor w/ 355 levels "00:03.0","00:04.0",..: 166 183 184 185 186 188 189 190 191 192 ...
+ $ Speed  : num  172 164 163 163 163 ...
+ $ To.Win : Factor w/ 365 levels "0:00:00","0:05:21",..: 1 2 3 4 5 6 7 8 9 10 ...
+
+> texout <- subset(pigeons, Breeder=='Texas Outlaws')
+> texout
+    Pos       Breeder          Pigeon Color Sex Ent Arrival   Speed  To.Win
+1     1 Texas Outlaws 19633-AU15-FOYS  BCWF   H   1 42:14.0 172.155 0:00:00
+10   10 Texas Outlaws 19632-AU15-FOYS    BC   H   2 48:03.0 162.888 0:05:48
+206 206 Texas Outlaws 19657-AU15-FOYS  BCWF   H   3 14:48.0 130.564 0:32:33
+275 275 Texas Outlaws 19638-AU15-FOYS    BC   H   4 41:35.0 108.922 0:59:21
+
+
+
+
+  
+ 
