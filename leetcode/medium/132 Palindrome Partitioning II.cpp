@@ -9,6 +9,12 @@ Return 1 since the palindrome partitioning ["aa","b"] could be produced using 1 
 
 */
 
+
+/*
+Non- working solution
+DP solution but not optimal solution
+*/
+
 class Solution {
 public:
        bool isPalindrome(string s,int start, int end) {
