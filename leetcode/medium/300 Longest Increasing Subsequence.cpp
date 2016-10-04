@@ -11,7 +11,8 @@ Follow up: Could you improve it to O(n log n) time complexity?
 
 */
 
-
+//todo: have to do divide and conquer solution which is O(n log n) solution
+ 
 class Solution {
 public:
     int lengthOfLIS(vector<int>& nums) {
