@@ -17,33 +17,24 @@ class Solution {
 public:
 
      bool isValidIP(string s, int start, int end) {
-        //  cout << s.substr(start, end-start+1) << endl;
          auto ip = stoi(s.substr(start, end-start+1));
-        //  cout << "IP " << ip <<endl;
          if( (ip >=0) && (ip<=255)) return true;
         return false;
     }
     
     void rec(string s, int start, int end, vector<string> &res, string curr, int dots) {
         if(dots>4) return;
-        if((dots==4 ) && (start==(s.size()))) {
-        //if(start >= (end)){
-        //  cout << "curr " << curr << endl;
+        if((dots==4 ) && (start==(s.size()))) 
           res.push_back(curr);
-        }
+        
         int min_end = min(end, start+3);
         for(int i=start;i<=min_end;i++) {
             auto new_curr = curr;
             if(isValidIP(s, start, i)){ 
-                // cout << "Valid IP" << endl;
                 new_curr+=(s.substr(start, i-start+1));
-               // cout << new_curr << endl;
                 if(dots<3) new_curr+=".";
-                
-                // cout << new_curr << endl;
                 rec(s, i+1, end, res, new_curr,dots+1);
             }
-            
            if(s[start]=='0') break;
         }
     }
