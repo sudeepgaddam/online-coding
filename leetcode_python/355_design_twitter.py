@@ -6,7 +6,6 @@ class Twitter(object):
         """
         Initialize your data structure here.
         """
-        self.followers = defaultdict(set)
         self.followees = defaultdict(set)
         self.tweets = defaultdict(list)
         self.timestamp = 1
@@ -28,8 +27,6 @@ class Twitter(object):
         """
         lst = self.followees[userId]
         lst.add(userId)
-        # print(lst)
-        
         allTweets=[]
         for fellow in lst:
             for x in self.tweets[fellow]:
@@ -46,7 +43,6 @@ class Twitter(object):
         :type followeeId: int
         :rtype: None
         """
-        self.followers[followeeId].add(followerId)
         self.followees[followerId].add(followeeId)
 
     def unfollow(self, followerId, followeeId):
@@ -56,10 +52,8 @@ class Twitter(object):
         :type followeeId: int
         :rtype: None
         """
-        if followeeId in self.followers and followerId in self.followers[followeeId]:
-            self.followers[followeeId].remove(followerId)
         if followerId in self.followees and followeeId in self.followees[followerId]:
-            self.followees[followerId].remove(followeeId)
+            self.followees[followerId].discard(followeeId)
 
 
 
