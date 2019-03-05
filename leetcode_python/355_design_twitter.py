@@ -52,8 +52,7 @@ class Twitter(object):
         :type followeeId: int
         :rtype: None
         """
-        if followerId in self.followees and followeeId in self.followees[followerId]:
-            self.followees[followerId].discard(followeeId)
+        self.followees[followerId].discard(followeeId)
 
 
 
