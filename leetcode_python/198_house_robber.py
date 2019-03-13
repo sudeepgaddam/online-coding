@@ -1,3 +1,5 @@
+# This is top-down dp solution. Space complexity is not optimal.
+# Can be optimised by bottom-up dp solution.
 class Solution(object):
     def rob(self, nums):
         """
