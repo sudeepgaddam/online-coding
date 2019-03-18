@@ -1,3 +1,4 @@
+# Use swapping instead of copying non-zero number to zero number. In the end, It will be zeroes in the end
 class Solution(object):
     def moveZeroes(self, nums):
         """
@@ -8,9 +9,9 @@ class Solution(object):
         nz = curr
         while curr< len(nums):
             if nums[curr]!=0:
-                nums[nz] = nums[curr]
+                nums[nz],nums[curr] = nums[curr],nums[nz]
                 nz+=1
             curr+=1
-        while nz< len(nums):
-            nums[nz] = 0
-            nz+=1
+        # while nz< len(nums):
+        #     nums[nz] = 0
+        #     nz+=1
