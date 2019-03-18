@@ -1,3 +1,5 @@
+# T?T?F:5:3
+# F?1:T?4:5
 class Solution(object):
     def parseTernary(self, expression):
         """
