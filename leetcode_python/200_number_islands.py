@@ -1,3 +1,5 @@
+# BFS solution.
+# Todo: Union find solution
 class Solution(object):
     def numIslands(self, grid):
         """
