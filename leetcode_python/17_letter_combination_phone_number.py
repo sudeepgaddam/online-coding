@@ -1,22 +1,20 @@
-# Using a single helper function, call it repetitively.
-# Use previous result and return new result(list)
-# Can be space optimised
 class Solution(object):
     def letterCombinations(self, digits):
         """
         :type digits: str
         :rtype: List[str]
         """
-        def helper(d,ls):
-            if not ls:
-                ls.append('')
-            rs = []
-            for s in ls:
-                for x in mp[d]:
-                    rs.append(s+x)
-            return rs
+        def helper():
+            if not res:
+                res.append('')
+            i=0
+            for i,d in enumerate(digits):
+                while len(res[0])!=(i+1):
+                    s = res.pop(0)
+                    for x in mp[d]:
+                        res.append(s+x)
                     
-        rs = []
+        res = []
         mp = {"2":"abc",
               "3":"def",
               "4":"ghi",
@@ -25,6 +23,6 @@ class Solution(object):
               "7":"pqrs",
               "8":"tuv",
               "9":"wxyz"}
-        for d in digits:
-            rs = helper(d,rs)
-        return rs
+        if digits:
+            helper()
+        return res
