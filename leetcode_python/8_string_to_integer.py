@@ -7,11 +7,7 @@ class Solution(object):
         i = 0
         res = ''
         sign = 1
-        INT_MIN = -(1<<31)
-        INT_MAX = (-INT_MIN) - 1
-        # print INT_MAX
-        while i<len(str) and str[i]==' ':
-            i+=1
+        str = str.strip()
         if i<len(str) and (str[i] in ['-','+']):
             if str[i] == '-':
                 sign = -1
@@ -23,6 +19,4 @@ class Solution(object):
             res = 0
         else:
             res = int(res)*sign
-        res = min(INT_MAX,max(INT_MIN,res))
-        return res
-        
+        return min(2**31-1,max(-2**31,res))
