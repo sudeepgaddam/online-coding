@@ -12,18 +12,18 @@ class Solution(object):
         :rtype: int
         """
         
-        def helper(root, path):
+        def helper(root, sum):
             if root.left:
-                helper(root.left,path+str(root.val))
+                helper(root.left,sum*10+root.val)
             if root.right:
-                helper(root.right,path+str(root.val))
+                helper(root.right,sum*10+root.val)
             if not root.left and not root.right:
-                self.res = self.res + int(path+str(root.val))
+                self.res = self.res + (sum*10+root.val)
         
         self.res = 0
         if not root:
             return self.res
 
-        helper(root,'')
+        helper(root,0)
         return self.res
  
